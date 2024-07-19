@@ -1,0 +1,51 @@
+.app {
+    display: flex;
+    max-width: 800px;
+    gap: 100px;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 80px;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+.inventory-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+}
+
+
+ul li {
+    list-style-type: none;
+
+}
+
+h1{
+    text-align: center;
+    font-family:'Times New Roman';
+}
+
+.checkout-btn{
+    background-color: #5ac75a;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 12px;
+    width: 47vh;
+    border-style: none;
+    justify-content: center;
+    margin-top: 20px;
+}
