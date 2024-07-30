@@ -141,10 +141,10 @@ const View = (() => {
       const inventoryItemTemp = `
       <li class = "li" id="${item.id}">
       <span>${item.content}</span>
-      <button id = "decrease" class = "decrease-btn" data-id ="${item.id}">-</button>
+      <button type= "button" id = "decrease" class = "decrease-btn" data-id ="${item.id}">-</button>
       <span id = "amount" class = "amount">${item.amount ?? 0}</span>
-      <button id = "increase" class = "increase-btn" data-id ="${item.id}">+</button>
-      <button class = "add-cart-btn" data-id="${item.id}">Add to Cart</button>
+      <button type= "button" id = "increase" class = "increase-btn" data-id ="${item.id}">+</button>
+      <button type= "button" class = "add-cart-btn" data-id="${item.id}">Add to Cart</button>
       </li>      
       `;
       inventoryTemp += inventoryItemTemp;
@@ -159,7 +159,7 @@ const View = (() => {
       <li class = "li" id="${item.id}">
       <span>${item.content}</span>
       <span id = "amount" class = "amount">- quantity : ${item.amount}</span>
-      <button class = "delete-cart-btn" data-id ="${item.id}">Delete</button>
+      <button type= "button" class = "delete-cart-btn" data-id ="${item.id}">Delete</button>
       </li> 
       `;
       cartTemp += cartItemTemp;
@@ -220,8 +220,9 @@ const Controller = ((model, view) => {
       let alreadyExists;
       alreadyExists = !!state.cart.find((item) => item.id === id);
       if (!alreadyExists) 
-        model.addToCart(newData).then((data) => {
+        model.addToCart(newData).then((item) => {
           alreadyExists = !!state.cart.find((item) => item.id === id);
+          state.cart = [...state.cart, item];
     });
 
       else {
